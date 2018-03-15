@@ -1,4 +1,3 @@
-(() => {
   console.log('memory game script fired!');
 
   //array to store images on card. I temporarily used numbers, but we will add images later when the game is somehow decent
@@ -9,10 +8,29 @@
   var cards_flipped = 0;
 
   //this function is supposed to shuffle cards when player starts a new game or refreshes the page//
-  function shuffle(array) {
-
+//  function shuffle(array) {
+//}
   //this function will be called every time the game starts again.
-    cards_flipped = 0;
-
-
+  //function newGame(array) {
+    //cards_flipped = 0;
+//}
+    //timer add interval
+  var second = 0, minute = 0; hour = 0;
+  var timer = document.querySelector(".timer");
+  var interval;
+  function startTimer(){
+      interval = setInterval(function(){
+          timer.innerHTML = minute+"mins "+second+"secs";
+          second++;
+          if(second == 60){
+              minute++;
+              second=0;
+          }
+          if(minute == 60){
+              hour++;
+              minute = 0;
+          }
+      },1000);
   }
+
+  timerOn.addEventListener("click", startTimer);
