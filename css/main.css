@@ -20,6 +20,22 @@ h2
 	color: #A9A9A9;
 }
 
+/*Timer*/
+#timerOn
+{
+	display:block;
+	width:100px;
+	margin:0 auto;
+}
+
+.timer
+{
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 
 /*this is a style rule for the board on which our cards will be placed*/
 #board
@@ -45,19 +61,5 @@ h2
  padding: 20px;
  font-size: 40px;
  cursor: pointer;
- text-align: center;
-}
-
-div #memory_board > div
-{
- background: #FF3399;
- border: #000 1px solid;
- width: 71px;
- height: 71px;
- float: left;
- margin: 10px;
- padding: 20px;
- font-size: 64px;
- /*cursor: pointer;*/
  text-align: center;
 }
