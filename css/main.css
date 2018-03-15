@@ -6,6 +6,20 @@
 	display: none;
 }
 
+h1
+{
+	font-family: Helvetica;
+	color: #ccc;
+	text-align: center;
+}
+
+h2
+{
+	font-family: Helvetica;
+	font-size: 20px;
+	color: #A9A9A9;
+}
+
 
 /*this is a style rule for the board on which our cards will be placed*/
 #board
@@ -31,5 +45,19 @@
  padding: 20px;
  font-size: 40px;
  cursor: pointer;
+ text-align: center;
+}
+
+div #memory_board > div
+{
+ background: #FF3399;
+ border: #000 1px solid;
+ width: 71px;
+ height: 71px;
+ float: left;
+ margin: 10px;
+ padding: 20px;
+ font-size: 64px;
+ /*cursor: pointer;*/
  text-align: center;
 }
