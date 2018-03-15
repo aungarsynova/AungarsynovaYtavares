@@ -6,74 +6,30 @@
 	display: none;
 }
 
-body
+
+/*this is a style rule for the board on which our cards will be placed*/
+#board
 {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	padding-left: 20px;
-	padding-top: 20px;
-}
-
-.button
-{
-	padding: 10px;
-	text-align: center;
-	text-decoration: none;
-	/*horiz offset, vertical offset, blir distance. RGBA: red, green, blue, alpha*/
-	box-shadow: 0 1px 2px rgba(0,0,0,.5);
-	border-radius: 5px;
-	color: #fff;
-	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
-}
-
-.button:active
-/*active is when a uder click on a button*/
-{
-	position: relative;
-	top: 2px;
-}
-
-.blue
-{
-border: solid 1px #0093C9;
-
-background: rgb(0,183,234); /*non css3 browsers*/
-
-background: -moz-linear-gradient(top, rgba(0,183,234,1) 0%, rgba(0,158,195,1) 100%);
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,183,234,1)), color-stop(100%,rgba(0,158,195,1)));
-
-background: -webkit-linear-gradient(top, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%);
-
-background: -o-linear-gradient(top, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%);
-
-background: -ms-linear-gradient(top, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%);
-
-background: linear-gradient(to bottom, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%);
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 );
-
-
+	background-color: #E8E8E8;
+	border: #8A888A 2px solid;
+	width: 700px;
+	height: 440px;
+	padding: 24px;
+	margin: 0 auto;
 }
 
 
-.blue:hover
+/*this is a style rule to represent the back of the card, when it's unflipped*/
+#board > div
 {
-background: rgb(59,192,229); /*non css3 browsers*/
-
-background: -moz-linear-gradient(top, rgba(59,192,229,1) 0%, rgba(25,162,193,1) 100%);
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,192,229,1)), color-stop(100%,rgba(25,162,193,1)));
-
-background: -webkit-linear-gradient(top, rgba(59,192,229,1) 0%,rgba(25,162,193,1) 100%);
-
-background: -o-linear-gradient(top, rgba(59,192,229,1) 0%,rgba(25,162,193,1) 100%);
-
-background: -ms-linear-gradient(top, rgba(59,192,229,1) 0%,rgba(25,162,193,1) 100%);
-
-background: linear-gradient(to bottom, rgba(59,192,229,1) 0%,rgba(25,162,193,1) 100%);
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bc0e5', endColorstr='#19a2c1',GradientType=0 );
-
-
+ background: #2D2D2E;
+ border: #000 1px solid;
+ width: 60px;
+ height: 60px;
+ float: left;
+ margin: 10px;
+ padding: 20px;
+ font-size: 40px;
+ cursor: pointer;
+ text-align: center;
 }
