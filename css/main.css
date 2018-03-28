@@ -6,22 +6,70 @@
 	display: none;
 }
 
-h1
-{
-	font-family: Helvetica;
-	color: #ccc;
-	text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-h2
-{
-	font-family: Helvetica;
-	font-size: 20px;
-	color: #A9A9A9;
+body {
+  margin: 20px 0;
+  background: #FFFFF3;
 }
+
+.grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  position: relative;
+  transition: all .4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+}
+
+.card,
+.back,
+.front {
+	border-radius: 15px;
+  height: 150px;
+  width: 150px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  background: #FFFFF3 url('../images/card_front_face.png') no-repeat center center / contain;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: #FFFFF3;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: #FFFFF3 !important;
+}
+
 
 /*Timer*/
-#timerOn
+/*#timerOn
 {
 	display:block;
 	width:100px;
@@ -35,31 +83,4 @@ h2
   align-items: center;
   flex-direction: column;
 }
-
-
-/*this is a style rule for the board on which our cards will be placed*/
-#board
-{
-	background-color: #E8E8E8;
-	border: #8A888A 2px solid;
-	width: 700px;
-	height: 440px;
-	padding: 24px;
-	margin: 0 auto;
-}
-
-
-/*this is a style rule to represent the back of the card, when it's unflipped*/
-#board > div
-{
- background: #2D2D2E;
- border: #000 1px solid;
- width: 60px;
- height: 60px;
- float: left;
- margin: 10px;
- padding: 20px;
- font-size: 40px;
- cursor: pointer;
- text-align: center;
-}
+*/
