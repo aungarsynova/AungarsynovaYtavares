@@ -41,6 +41,7 @@ var secondGuess = '';
 var count = 0;
 var previousTarget = null;
 var delay = 1200;
+var timerStarted = false;
 
 //Here we are grabbing the div called game we created in our HTML
 var game = document.getElementById('game');
@@ -94,11 +95,15 @@ var resetGuesses = function resetGuesses() {
 
 //adding event listener to make cards get selected and flip when clicked
 grid.addEventListener('click', function (event) {
+  if (startTimer === false) {
+    startTimer();
+  }
   var clicked = event.target;
 //this prevents the grid from being clicked. only the divs inside grid can be clicked
   if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('selected')) {
     return;
   }
+
 
 //this only lets to select 2 cards at a time
   if (count < 2) {
@@ -127,22 +132,32 @@ grid.addEventListener('click', function (event) {
 
 
     //timer add interval
-  //var second = 0, minute = 0; hour = 0;
-  //var timer = document.querySelector(".timer");
-  //var interval;
-  //function startTimer(){
-      //interval = setInterval(function(){
-          //timer.innerHTML = minute+"mins "+second+"secs";
-          //second++;
-          //if(second == 60){
-              //minute++;
-              //second=0;
-          //}
-          //if(minute == 60){
-              //hour++;
-              //minute = 0;
-          //}
-      //},1000);
-  //}
+  var second = 0, minute = 0; hour = 0;
+  var timer = document.querySelector(".timer");
+  var interval;
+  function startTimer(){
+    debugger;
+    startTimer = true;
+    //remove the vent listener from all the cards
+      interval = setInterval(function(){
+        console.log ('timer fired!');
+          timer.innerHTML = minute+"mins "+second+"secs";
+          second++;
+          if(second == 60){
+              minute++;
+              second=0;
+          }
+          if(minute == 60){
+              hour++;
+              minute = 0;
+          }
+      },1000);
+  }
 
-  //timerOn.addEventListener("click", startTimer);
+  //start timer on the firt move
+  function firstMove(){
+    debugger;
+    startTimer();
+  }
+//loop through all the cards for each
+ //timerOn.addEventListener("click", startTimer);
