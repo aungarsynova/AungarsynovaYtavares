@@ -74,7 +74,7 @@ h1
 
 
 /*Timer*/
-*#timerOn
+#timerOn
 {
 	display:block;
 	width:100px;
@@ -87,4 +87,56 @@ h1
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/*Congratulations window*/
+.overlay
+{
+	position: fixed;
+	background-color: #ffffff;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+#window
+{
+	margin: 70px auto;
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 5px;
+	width: 85%;
+	position: relative;
+	transition: all 5s ease-in-out;
+}
+
+#window h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+#window .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+#window .close:hover {
+	color: #E5F720;
+}
+
+.show {
+	visibility: visible !important;
+	opacity: 100 !important;
 }
