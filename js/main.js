@@ -42,6 +42,9 @@ var count = 0;
 var previousTarget = null;
 var delay = 1200;
 var timerStarted = false;
+var score = 0;
+let modal = document.getElementById("window")
+let closeicon = document.querySelector(".close");
 
 //Here we are grabbing the div called game we created in our HTML
 var game = document.getElementById('game');
@@ -75,11 +78,31 @@ gameGrid.forEach(function (item) {
 
 //variable if two cards match each other
 var match = function match() {
+  score ++;
   var selected = document.querySelectorAll('.selected');
   selected.forEach(function (card) {
     card.classList.add('match');
   });
-};
+  //timer stops when player matches all of the pairs
+  if (score == 6) {
+    clearInterval(interval);
+    finalTime = timer.innerHTML;
+    modal.classList.add("show");
+          //showing move, rating, time on modal
+          document.getElementById("totalTime").innerHTML = finalTime;
+
+          //closeicon on modal
+          closeModal();
+      };
+  }
+  function closeModal(){
+      closeicon.addEventListener("click", function(e){
+          modal.classList.remove("show");
+          startGame();
+      });
+  };
+
+
 
 //variable for resetting guesses
 var resetGuesses = function resetGuesses() {
@@ -95,7 +118,7 @@ var resetGuesses = function resetGuesses() {
 
 //adding event listener to make cards get selected and flip when clicked
 grid.addEventListener('click', function (event) {
-  if (startTimer === false) {
+  if (timerStarted === false) {
     startTimer();
   }
   var clicked = event.target;
@@ -128,16 +151,14 @@ grid.addEventListener('click', function (event) {
   }
 });
 
-})();
-
 
     //timer add interval
   var second = 0, minute = 0; hour = 0;
   var timer = document.querySelector(".timer");
   var interval;
   function startTimer(){
-    debugger;
-    startTimer = true;
+    //debugger;
+    timerStarted = true;
     //remove the vent listener from all the cards
       interval = setInterval(function(){
         console.log ('timer fired!');
@@ -156,8 +177,14 @@ grid.addEventListener('click', function (event) {
 
   //start timer on the firt move
   function firstMove(){
-    debugger;
+    //debugger;
     startTimer();
   }
+
+  //If player guessed all cards timer stops
+
+
+})();
+
 //loop through all the cards for each
- //timerOn.addEventListener("click", startTimer);
+ //timer.addEventListener("click", startTimer);
