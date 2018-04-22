@@ -180,7 +180,6 @@ grid.addEventListener('click', function (event) {
     //debugger;
     startTimer();
   }
-
   //If player guessed all cards timer stops
 
 
