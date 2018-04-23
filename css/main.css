@@ -8,21 +8,49 @@
 
 *,
 *::before,
-*::after {
+*::after
+{
   box-sizing: border-box;
 }
 
-body {
+body
+{
   margin: 20px 0;
   background: #FFFFF3;
+	font-family: 'Gugi', cursive;
+	font-size:25px;
+	background-image: url("../images/hypnotize.png");
+
+}
+
+a
+{
+	text-decoration: none;
 }
 
 h1
 {
 	text-align: center;
+	font-family: 'Gugi', cursive;
+	font-size: 55px;
+	color: #002f27;
 }
 
-.grid {
+h1:hover
+{
+	color: #202361;
+}
+
+h2
+{
+	font-family: 'Gugi', cursive;
+	font-size: 30px;
+	color: #002f27;
+	text-align: center;
+}
+
+.grid
+{
   max-width: 960px;
   margin: 0 auto;
   display: flex;
@@ -30,7 +58,8 @@ h1
   justify-content: center;
 }
 
-.card {
+.card
+{
   position: relative;
   transition: all .4s linear;
   transform-style: preserve-3d;
@@ -39,24 +68,28 @@ h1
 
 .card,
 .back,
-.front {
+.front
+{
 	border-radius: 15px;
   height: 150px;
   width: 150px;
 }
 
 .back,
-.front {
+.front
+{
   position: absolute;
   backface-visibility: hidden;
 }
 
-.front {
+.front
+{
   z-index: 2;
   background: #FFFFF3 url('../images/card_front_face.png') no-repeat center center / contain;
 }
 
-.back {
+.back
+{
   transform: rotateY(180deg);
   background-color: #FFFFF3;
   background-size: contain;
@@ -64,11 +97,13 @@ h1
   background-position: center center;
 }
 
-.selected {
+.selected
+{
   transform: rotateY(180deg);
 }
 
-.match .front {
+.match .front
+{
   background: #FFFFF3 !important;
 }
 
@@ -79,6 +114,7 @@ h1
 	display:block;
 	width:100px;
 	margin:0 auto;
+	font-family: 'Gugi', cursive;
 }
 
 .timer
@@ -115,13 +151,15 @@ h1
 	transition: all 5s ease-in-out;
 }
 
-#window h2 {
+#window h2
+{
 	margin-top: 0;
 	color: #333;
 	font-family: Tahoma, Arial, sans-serif;
 }
 
-#window .close {
+#window .close
+{
 	position: absolute;
 	top: 20px;
 	right: 30px;
@@ -132,11 +170,94 @@ h1
 	color: #333;
 }
 
-#window .close:hover {
+#window .close:hover
+{
 	color: #E5F720;
 }
 
-.show {
+.show
+{
 	visibility: visible !important;
 	opacity: 100 !important;
+}
+
+@-webkit-keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
 }
